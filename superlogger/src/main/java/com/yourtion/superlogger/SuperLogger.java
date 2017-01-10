@@ -5,4 +5,15 @@ package com.yourtion.superlogger;
  */
 
 public class SuperLogger {
+
+    private static SuperLogger instance;
+    private SuperLogger (){}
+
+    public static synchronized SuperLogger getInstance() {
+        if (instance == null) {
+            instance = new SuperLogger();
+        }
+        return instance;
+    }
+
 }
