@@ -27,7 +27,7 @@ public class SuperLogger {
         return instance;
     }
 
-    public void redirectLogcatToDocumentFolder(String tag) {
+    public void redirectLogcat(String[] tags) {
 
         try {
            this.mLogFile = new File( this.mLogDir , System.currentTimeMillis() + ".log" );
@@ -37,7 +37,7 @@ public class SuperLogger {
             }
 
             Process process = Runtime.getRuntime().exec( "logcat -c");
-            process = Runtime.getRuntime().exec( "logcat -f " + this.mLogFile + " " + tag +":D *:S" );
+            process = Runtime.getRuntime().exec( "logcat -f " + this.mLogFile + " " + tags[0] +":D *:S" );
         } catch ( IOException e ) {
             e.printStackTrace();
         }

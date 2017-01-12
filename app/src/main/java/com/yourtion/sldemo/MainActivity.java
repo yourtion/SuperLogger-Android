@@ -13,7 +13,7 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        SuperLogger.getInstance(this).redirectLogcatToDocumentFolder("Debug");
+        SuperLogger.getInstance(this).redirectLogcat("Debug");
         Log.d("Debug", "test");
         SuperLogger.getInstance(this).listLogDir();
     }
